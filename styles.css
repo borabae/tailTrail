@@ -1,0 +1,130 @@
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif; /* Set font family for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+header {
+    background-color: #4CAF50; /* Set background color for header */
+    color: white; /* Set text color for header */
+    padding: 20px; /* Add padding to header */
+    text-align: center; /* Center-align text */
+}
+
+nav {
+    background-color: #333; /* Set background color for navigation */
+    color: white; /* Set text color for navigation */
+    padding: 10px; /* Add padding to navigation */
+}
+
+nav ul {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 20px; /* Add right margin between list items */
+}
+
+nav ul li a {
+    color: white; /* Set text color for navigation links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+main {
+    padding: 20px; /* Add padding to main content area */
+}
+
+section {
+    margin-bottom: 30px; /* Add bottom margin between sections */
+}
+
+footer {
+    background-color: #333; /* Set background color for footer */
+    color: white; /* Set text color for footer */
+    padding: 10px; /* Add padding to footer */
+    text-align: center; /* Center-align text */
+}
+
+/* Specific Styles */
+
+h1 {
+    margin: 0; /* Remove default margin for h1 */
+}
+
+h2 {
+    color: #4CAF50; /* Set text color for h2 */
+}
+
+form {
+    background-color: #f2f2f2; /* Set background color for form */
+    padding: 20px; /* Add padding to form */
+    border-radius: 5px; /* Add border radius to form */
+}
+
+label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 10px; /* Add bottom margin between labels */
+}
+
+input[type="text"],
+select {
+    width: 100%; /* Set input and select elements to 100% width */
+    padding: 10px; /* Add padding to input and select elements */
+    margin-bottom: 20px; /* Add bottom margin between input and select elements */
+}
+
+button {
+    background-color: #4CAF50; /* Set background color for button */
+    color: white; /* Set text color for button */
+    padding: 10px 20px; /* Add padding to button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius to button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Change background color on hover */
+}
+
+#random-dog-gallery {
+    text-align: center;
+}
+
+#dogGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#dogGallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#lost-pet-gallery {
+    text-align: center; /* Center-align the gallery */
+}
+
+#petGallery {
+    display: flex; /* Use flexbox to create a flexible layout */
+    flex-wrap: wrap; /* Allow images to wrap to the next line if necessary */
+    justify-content: center; /* Center-align images horizontally */
+    gap: 20px; /* Add spacing between images */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#petGallery img {
+    max-width: 100%; /* Set a fixed width for the images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Add rounded corners to the images */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}

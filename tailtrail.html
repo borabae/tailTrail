@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Start of HTML document with language attribute set to English -->
+
+<head> <!-- Start of head section containing metadata and external resources -->
+    <meta charset="UTF-8"/> <!-- Character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Viewport settings for responsive design -->
+    <meta name="description" content="Tail Trail"/> <!-- Description meta tag -->
+    <title>Tail Trail</title> <!-- Document title -->
+    <link href="styles.css" rel="stylesheet"> <!-- Link to external CSS file -->
+</head> <!-- End of head section -->
+
+<body>
+    <!-- Start of body section -->
+
+    <!-- Header Section -->
+    <header>
+        <h1>Tail Trail</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#lost">Report Lost Pet</a></li>
+            <li><a href="#found">Report Found Pet</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Welcome to Tail Trail</h2>
+            <p>This is where you can report lost or found pets and receive real-time alerts about pets in your area.</p>
+        </section>
+
+        <!-- Lost Pet Image Gallery Section -->
+        <section id="lost-pet-gallery">
+            <h2>Lost Pet Gallery</h2>
+            <div id="petGallery">
+                <img src="https://awl.org.au/resources/hero/_824x463_crop_center-center_100_line/AWL-Website-Content-page-Ive-lost-my-dog.jpg" alt="Lost Dog">
+                <img src="data:image/jpeg;base64,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" alt="Dog 2">
+                <img src="https://preview.redd.it/lost-bird-found-at-sw-14th-and-columbia-v0-hqrgn0bf5jaa1.jpg?auto=webp&s=5b0c5446fd35ccb0828f7f2174457ff9d35ac510" alt="Dog 3">
+        <!-- Add more images as needed -->
+    </div>
+</section>
+
+            </div>
+        </section>
+
+        <!-- Report Lost Pet Section -->
+        <section id="lost">
+            <h2>Report Lost Pet</h2>
+            <!-- Lost Pet Reporting Form -->
+            <form action="submit_lost_pet.php" method="post">
+                <label for="petName">Pet Name:</label>
+                <input type="text" id="petName" name="petName" required>
+
+                <label for="petType">Pet Type:</label>
+                <select id="petType" name="petType">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="lastSeenLocation">Last Seen Location:</label>
+                <input type="text" id="lastSeenLocation" name="lastSeenLocation" required>
+
+                <label for="contactInfo">Contact Information:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Report Found Pet Section -->
+        <section id="found">
+            <h2>Report Found Pet</h2>
+            <!-- Found Pet Reporting Form -->
+            <form action="submit_found_pet.php" method="post">
+                <label for="foundPetName">Found Pet Name:</label>
+                <input type="text" id="foundPetName" name="foundPetName" required>
+
+                <label for="foundPetType">Found Pet Type:</label>
+                <select id="foundPetType" name="foundPetType">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="foundLocation">Found Location:</label>
+                <input type="text" id="foundLocation" name="foundLocation" required>
+
+                <label for="finderContactInfo">Contact Information:</label>
+                <input type="text" id="finderContactInfo" name="finderContactInfo" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Lost & Found Pet Alert System</h2>
+            <p>The Lost & Found Pet Alert System helps reunite lost pets with their owners by providing a platform for reporting lost or found pets and receiving real-time alerts about pets in your area.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or concerns, please contact us at <a href="mailto:info@lostfoundpetsystem.com">info@lostfoundpetsystem.com</a>.</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2022 Lost & Found Pet Alert System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Random Dog Image Gallery -->
+    <script src="tailtrail.js"></script>
+
+</body> <!-- End of body section -->
+
+</html> <!-- End of HTML document -->
+

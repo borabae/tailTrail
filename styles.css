@@ -91,18 +91,18 @@ button:hover {
     background-color: #45a049; /* Change background color on hover */
 }
 
-#random-dog-gallery {
+#lost-pet-gallery {
     text-align: center;
 }
 
-#dogGallery {
+#petGallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
-#dogGallery img {
+#petGallery img {
     width: 200px;
     height: auto;
     border-radius: 8px;

@@ -67,60 +67,90 @@
         </section>
 
         <!-- Report Lost Pet Section -->
-        <section id="lost">
-            <h2>Report Lost Pet</h2>
-            <!-- Lost Pet Reporting Form -->
-            <form action="submit_lost_pet.php" method="post">
-                <label for="petName">Pet Name:</label>
-                <input type="text" id="petName" name="petName" required>
+<section id="lost">
+    <h2>Report Lost Pet</h2>
+    <!-- Lost Pet Reporting Form -->
+    <form action="submit_lost_pet.php" method="post">
+        <!-- Pet Information -->
+        <h3>Pet Information</h3>
+        <label for="petName">Pet Name:</label>
+        <input type="text" id="petName" name="petName" required>
 
-                <label for="petType">Pet Type:</label>
-                <select id="petType" name="petType">
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="bird">Bird</option>
-                    <option value="rabbit">Rabbit</option>
-                    <option value="guineaPig">Guinea Pig</option>
-                    <option value="other">Other</option>
-                </select>
+        <label for="petType">Pet Type:</label>
+        <select id="petType" name="petType">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="bird">Bird</option>
+            <option value="rabbit">Rabbit</option>
+            <option value="guineaPig">Guinea Pig</option>
+            <option value="other">Other</option>
+        </select>
 
-                <label for="lastSeenLocation">Last Seen Location:</label>
-                <input type="text" id="lastSeenLocation" name="lastSeenLocation" required>
+        <label for="lastSeenLocation">Last Seen Location:</label>
+        <input type="text" id="lastSeenLocation" name="lastSeenLocation" required>
 
-                <label for="contactInfo">Contact Information:</label>
-                <input type="text" id="contactInfo" name="contactInfo" required>
+        <!-- Owner Information/Contact -->
+        <h3>Owner Information/Contact</h3>
+        <label for="ownerName">Owner Name:</label>
+        <input type="text" id="ownerName" name="ownerName" required>
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+        <label>Best Contact Method:</label>
+        <div>
+            <button type="button" onclick="showPhoneNumberInputLost()">Phone</button>
+            <button type="button" onclick="showEmailInputLost()">Email</button>
+            <button type="button" onclick="showAppLoginLost()">Use the App</button>
+        </div>
+        <div id="contactInputLost">
+            <label for="contactInfo">Contact Information:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required>
+        </div>
 
-        <!-- Report Found Pet Section -->
-        <section id="found">
-            <h2>Report Found Pet</h2>
-            <!-- Found Pet Reporting Form -->
-            <form action="submit_found_pet.php" method="post">
-                <label for="foundPetName">Found Pet Name:</label>
-                <input type="text" id="foundPetName" name="foundPetName" required>
+        <button type="submit">Submit</button>
+    </form>
+</section>
 
-                <label for="foundPetType">Found Pet Type:</label>
-                <select id="foundPetType" name="foundPetType">
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="bird">Bird</option>
-                    <option value="rabbit">Rabbit</option>
-                    <option value="guineaPig">Guinea Pig</option>
-                    <option value="other">Other</option>
-                </select>
+<!-- Report Found Pet Section -->
+<section id="found">
+    <h2>Report Found Pet</h2>
+    <!-- Found Pet Reporting Form -->
+    <form action="submit_found_pet.php" method="post">
+        <!-- Pet Information -->
+        <h3>Pet Information</h3>
+        <label for="foundPetName">Found Pet Name:</label>
+        <input type="text" id="foundPetName" name="foundPetName" required>
 
-                <label for="foundLocation">Found Location:</label>
-                <input type="text" id="foundLocation" name="foundLocation" required>
+        <label for="foundPetType">Found Pet Type:</label>
+        <select id="foundPetType" name="foundPetType">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="bird">Bird</option>
+            <option value="rabbit">Rabbit</option>
+            <option value="guineaPig">Guinea Pig</option>
+            <option value="other">Other</option>
+        </select>
 
-                <label for="finderContactInfo">Contact Information:</label>
-                <input type="text" id="finderContactInfo" name="finderContactInfo" required>
+        <label for="foundLocation">Found Location:</label>
+        <input type="text" id="foundLocation" name="foundLocation" required>
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+        <!-- Owner Information/Contact -->
+        <h3>Owner Information/Contact</h3>
+        <label for="finderName">Finder Name:</label>
+        <input type="text" id="finderName" name="finderName" required>
+
+        <label>Best Contact Method:</label>
+        <div>
+            <button type="button" onclick="showPhoneNumberInputFound()">Phone</button>
+            <button type="button" onclick="showEmailInputFound()">Email</button>
+            <button type="button" onclick="showAppLoginFound()">Use the App</button>
+        </div>
+        <div id="contactInputFound">
+            <label for="contactInfo">Contact Information:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
 
         <!-- About Section -->
         <section id="about">

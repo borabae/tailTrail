@@ -99,7 +99,6 @@ button:hover {
     display: inline-block; /* Display gallery containers side-by-side */
     vertical-align: top; /* Align containers to the top */
     margin-right: 30px; /* Add spacing between gallery containers */
-    background-color: #F4A905;
     border: #333;
     border-radius: 10px;
   }

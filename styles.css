@@ -91,66 +91,29 @@ button:hover {
     background-color: #F4A905; /* Change background color on hover */
 }
 
-gallery-wrapper {
-    display: inline-block; /* Use flexbox to arrange galleries */
-    gap: 20px; /* Add space between galleries */
-    max-width: 100%; /* Ensure the container stretches to the available width */
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
-}
-
-.foundGallery-container,
-.lostGallery-container {
-    max-width: 50%; /* Limit each gallery container to 50% of the parent container's width */
-    display: inline-block;
-    vertical-align: top;
-    box-sizing: border-box;
-    overflow-x: auto;
-    border: 1px solid #F4A905;
-    border-radius: 8px;
-    background-color: #F4A905;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin-bottom: 20px;
-    gap: 20px;
-    scrollbar-width: auto;
-    scrollbar-color: #F4A905 #f0f0f0;
-}
-
-.gallery-container::-webkit-scrollbar {
-    width: 5px; /* Width of the scrollbar */
-}
-
-.gallery-container::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Track color */
-}
-
-.gallery-container::-webkit-scrollbar-thumb {
-    background-color: #F4A905; /* Thumb color */
-    border-radius: 4px; /* Round the corners of the thumb */
-}
-
-.gallery-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Thumb color on hover */
-}
-
-#lost-pet-gallery {
-    text-align: center; /* Center-align the gallery */
-}
-
 #petGallery {
-    display: flex; /* Use flexbox to create a flexible layout */
-    flex-wrap: nowrap; /* Allow images to wrap to the next line if necessary */
-    gap: 20px; /* Add spacing between images */
-    max-height: 150px;
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    margin: 0 auto;
+    text-align: center;
 }
-
-#petGallery img {
-    max-width: 100%; /* Set a fixed width for the images */
-    height: 150px; /* Maintain aspect ratio */
-    object-fit: contain;
-}
-
+.gallery-container {
+    width: 40%; /* Set the width of each gallery container */
+    display: inline-block; /* Display gallery containers side-by-side */
+    vertical-align: top; /* Align containers to the top */
+    margin-right: 30px; /* Add spacing between gallery containers */
+    background-color: #F4A905;
+    border: #333;
+    border-radius: 10px;
+  }
+  
+  .pet-gallery {
+    display: flex; /* Use flexbox for the gallery */
+    flex-wrap: nowrap; /* Prevent images from wrapping to the next line */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 10px; /* Add spacing between images */
+  }
+  
+  .pet-gallery img {
+    max-width: 100px; /* Set maximum width for images */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio without stretching */
+  }
+  

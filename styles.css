@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #d4b83b; /* Set background color for header */
+    background-color: #F4A905; /* Set background color for header */
     color: white; /* Set text color for header */
     padding: 20px; /* Add padding to header */
     text-align: center; /* Center-align text */
@@ -57,7 +57,7 @@ h1 {
 }
 
 h2 {
-    color: #d4b83b; /* Set text color for h2 */
+    color: #F4A905; /* Set text color for h2 */
 }
 
 form {
@@ -79,7 +79,7 @@ select {
 }
 
 button {
-    background-color: #d4b83b; /* Set background color for button */
+    background-color: #F4A905; /* Set background color for button */
     color: white; /* Set text color for button */
     padding: 10px 20px; /* Add padding to button */
     border: none; /* Remove border */
@@ -88,40 +88,32 @@ button {
 }
 
 button:hover {
-    background-color: #d4b83b; /* Change background color on hover */
+    background-color: #F4A905; /* Change background color on hover */
 }
 
-.foundGallery-container {
-  max-width: 50%;
-  display: flex;
-  overflow-x: auto;
-  border: 1px solid #d4b83b;
-  border-radius: 8px;
-  background-color: #d4b83b;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-bottom: 20px;
-  gap: 20px;
-
-  scrollbar-width: auto;
-  scrollbar-color: #d4b83b #f0f0f0;
+gallery-wrapper {
+    display: inline-block; /* Use flexbox to arrange galleries */
+    gap: 20px; /* Add space between galleries */
+    max-width: 100%; /* Ensure the container stretches to the available width */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
 }
 
 .foundGallery-container,
 .lostGallery-container {
-    flex: 1; /* Make each gallery container take up equal space */
     max-width: 50%; /* Limit each gallery container to 50% of the parent container's width */
-    display: flex;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
     overflow-x: auto;
-    border: 1px solid #d4b83b;
+    border: 1px solid #F4A905;
     border-radius: 8px;
-    background-color: #d4b83b;
+    background-color: #F4A905;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
     margin-bottom: 20px;
     gap: 20px;
     scrollbar-width: auto;
-    scrollbar-color: #d4b83b #f0f0f0;
+    scrollbar-color: #F4A905 #f0f0f0;
 }
 
 .gallery-container::-webkit-scrollbar {
@@ -133,7 +125,7 @@ button:hover {
 }
 
 .gallery-container::-webkit-scrollbar-thumb {
-    background-color: #d4b83b; /* Thumb color */
+    background-color: #F4A905; /* Thumb color */
     border-radius: 4px; /* Round the corners of the thumb */
 }
 

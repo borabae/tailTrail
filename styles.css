@@ -115,10 +115,13 @@ button:hover {
 
 #petGallery {
     display: flex; /* Use flexbox to create a flexible layout */
-    flex-wrap: wrap; /* Allow images to wrap to the next line if necessary */
+    flex-wrap: nowrap; /* Allow images to wrap to the next line if necessary */
     justify-content: center; /* Center-align images horizontally */
     gap: 20px; /* Add spacing between images */
+    max-height: 400px;
     max-width: 800px;
+    overflow-x: auto;
+    overflow-y: hidden;
     margin: 0 auto;
 }
 

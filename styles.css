@@ -123,34 +123,15 @@ button:hover {
 }
 
 #lost-pet-gallery {
-    text-align: center;
-}
-
-#petGallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-#petGallery img {
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-#lost-pet-gallery {
     text-align: center; /* Center-align the gallery */
 }
 
 #petGallery {
     display: flex; /* Use flexbox to create a flexible layout */
     flex-wrap: nowrap; /* Allow images to wrap to the next line if necessary */
-    justify-content: center; /* Center-align images horizontally */
     gap: 20px; /* Add spacing between images */
-    max-height: 400px;
-    max-width: 800px;
+    max-height: 150px;
+    max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     margin: 0 auto;
@@ -158,7 +139,6 @@ button:hover {
 
 #petGallery img {
     max-width: 100%; /* Set a fixed width for the images */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Add rounded corners to the images */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+    height: 150px; /* Maintain aspect ratio */
+    object-fit: contain;
 }

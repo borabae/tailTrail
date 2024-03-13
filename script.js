@@ -1,35 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Function to open login pop-up when the login button is clicked
-    document.getElementById("loginBtn").addEventListener("click", function() {
-        document.getElementById("loginPopup").style.display = "block";
-    });
-
-    // Function to open registration pop-up when the registration button is clicked
-    document.getElementById("registerBtn").addEventListener("click", function() {
-        document.getElementById("registerPopup").style.display = "block";
-    });
-
-    // Function to close pop-up
-    function closePopup(popupId) {
-        document.getElementById(popupId).style.display = "none";
-    }
-
-    // Function to handle form submission (login)
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        // Handle login form submission here (e.g., via AJAX)
-        // After successful login, you can redirect the user or perform other actions
-        closePopup("loginPopup"); // Close the login pop-up
-    });
-
-    // Function to handle form submission (registration)
-    document.getElementById("registerForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        // Handle registration form submission here (e.g., via AJAX)
-        // After successful registration, you can redirect the user or perform other actions
-        closePopup("registerPopup"); // Close the registration pop-up
-    });
-
     // JavaScript code to handle form submission for Lost Pet Form
     var lostPetForm = document.getElementById("lostPetForm");
 
@@ -102,6 +71,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to populate breed dropdown based on selected species
     function populateBreedDropdown(species) {
+
+        console.log("Populating breed dropdown for species:", species);
+        
         var breedOptions = {
             dog: ["Labrador Retriever", "Staffordshire Bull Terrier", "Border Collie", "Golden Retriever", "German Shepherd", "Cavalier King Charles Spaniel", "French Bulldog", "Australian Shepherd", "Poodle", "Australian Cattle Dog", "Boxer", "Dachshund", "Beagle", "Pembroke Welsh Corgi", "Shih Tzu", "Maltese", "Rottweiler", "Bull Terrier", "Siberian Husky", "Australian Terrier"],
             cat: ["Domestic Shorthair", "Domestic Longhair", "Siamese", "Maine Coon", "Ragdoll", "Persian", "Bengal", "British Shorthair", "Scottish Fold", "Sphynx", "Abyssinian", "Birman", "Norwegian Forest Cat", "Oriental", "Burmese", "Exotic Shorthair", "Russian Blue", "Devon Rex", "American Shorthair", "Turkish Van"],
@@ -120,12 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
             option.textContent = breed;
             breedsDropdown.appendChild(option);
         });
-    }
-
-    // Function to display the popup
-    function displayPopup() {
-        var popup = document.getElementById("popup");
-        popup.style.display = "block";
     }
 
     // Function to close the popup

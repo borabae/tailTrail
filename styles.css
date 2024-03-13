@@ -115,4 +115,17 @@ button:hover {
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Maintain aspect ratio without stretching */
   }
+
+  .radio-container {
+    display: flex; /* Use flexbox to align items horizontally */
+  }
+  
+  .radio-container label {
+    margin-right: 15px; /* Adjust as needed to create space between each radio button */
+  }
+  
+  .radio-container input[type="radio"] {
+    margin-right: 5px; /* Adjust as needed to create space between radio button and label */
+  }
+  
   

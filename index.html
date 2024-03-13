@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Start of HTML document with language attribute set to English -->
+<html lang="en">
 
-<head> <!-- Start of head section containing metadata and external resources -->
-    <meta charset="UTF-8"/> <!-- Character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Viewport settings for responsive design -->
-    <meta name="description" content="Tail Trail"/> <!-- Description tag -->
-    <title>Tail Trail</title> <!-- Document title -->
-    <link href="styles.css" rel="stylesheet"> <!-- Link to external CSS file -->
-</head> <!-- End of head section -->
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Tail Trail"/>
+    <title>Tail Trail</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
 
 <body>
-    <!-- Start of body section -->
-
-    <!-- Header Section -->
     <header>
         <h1>Tail Trail</h1>
     </header>
-
-    <!-- Navigation Menu -->
+    
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -29,150 +25,142 @@
         </ul>
     </nav>
 
-    <!-- Main Content Area -->
     <main>
-        <!-- Home Section -->
         <section id="home">
             <h2>Welcome to Tail Trail</h2>
             <p>This is where you can report lost or found pets and receive real-time alerts about pets in your area.</p>
         </section>
 
-        <!-- Pet Gallery Section -->
         <section id="petGallery">
-          <div class="gallery-container">
-            <h2>Lost Pets</h2>
-            <div class="pet-gallery" id="lost-pet-gallery">
-              <!-- Images for lost pets -->
-              <img src="https://www.humanesociety.org/sites/default/files/styles/768x326/public/2020/04/guinea-pig-511233.jpg?h=10d202d3&itok=xygPb78l" alt="Lost Pet 1">
-              <img src="https://vetafarm.com.au/app/uploads/2022/05/Rabbit_Vaccinations_Featured_Image_Updated.jpg" alt="Lost Pet 2">
-              <img src="https://www.ntu.ac.uk/__data/assets/image/0035/884573/Otis-Havana.jpg" alt="Lost Pet 3">
-              <img src="https://media.4-paws.org/c/e/0/f/ce0f0d38552bcb7be9897b2b9c970ae2700ed8d3/VIER%20PFOTEN_2018-07-18_221-3779x2615-1920x1329.jpg" alt="Lost Pet 4">
-              <img src="https://www.purina.co.uk/sites/default/files/2020-12/Dog_1098119012_Teaser.jpg" alt="Lost Pet 5">
-              <!-- Add more images as needed -->
+            <div class="gallery-container">
+                <h2>Lost Pets</h2>
+                <div class="pet-gallery" id="lost-pet-gallery">
+                    <img src="https://www.humanesociety.org/sites/default/files/styles/768x326/public/2020/04/guinea-pig-511233.jpg?h=10d202d3&itok=xygPb78l" alt="Lost Pet 1">
+                    <!-- Add more images as needed -->
+                </div>
             </div>
-          </div>
-          
-          <div class="gallery-container">
-            <h2>Found Pets</h2>
-            <div class="pet-gallery" id="found-pet-gallery">
-              <!-- Images for found pets -->
-              <img src="https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg" alt="Found Pet 1">
-              <img src="https://icatcare.org/app/uploads/2018/07/Elderly-cats.png" alt="Found Pet 2">
-              <img src="https://www.thesprucepets.com/thmb/r23RBk0t4DC9UHp2pTzuXLz7Jj4=/3600x0/filters:no_upscale():strip_icc()/popular-small-bird-species-390926-hero-d3d0af7bb6ed4947b0c3c5afb4784456.jpg" alt="Found Pet 3">
-              <img src="https://media.4-paws.org/1/4/e/a/14ea44c5fc3e0aa54688ec51ee5c8b1396d7f54c/Kaninchen%20im%20Freigehege%20%282%29-4440x3072.jpg" alt="Found Pet 4">
-              <img src="https://www.zooplus.ie/magazine/wp-content/uploads/2022/03/peruvian-guinea-pig-with-swirly-hair.jpeg" alt="Found Pet 5">
-              <!-- Add more images as needed -->
-            </div>
-          </div>          
+            
+            <div class="gallery-container">
+                <h2>Found Pets</h2>
+                <div class="pet-gallery" id="found-pet-gallery">
+                    <img src="https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg" alt="Found Pet 1">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>          
         </section>
 
-        <!-- Report Lost Pet Section -->
-<section id="lost">
-    <h2>Report Lost Pet</h2>
-    <!-- Lost Pet Reporting Form -->
-    <form action="submit_lost_pet.php" method="post">
-        <!-- Pet Information -->
-        <h3>Pet Information</h3>
-        <label for="petName">Pet Name:</label>
-        <input type="text" id="petName" name="petName" required>
+        <section id="lost">
+            <h2>Report Lost Pet</h2>
+            <form id="lostPetForm" action="submit_lost_pet.php" method="post">
+                <label for="petName">Pet Name:</label>
+                <input type="text" id="petName" name="petName" required autocomplete="name">
 
-        <label for="petType">Pet Type:</label>
-        <select id="petType" name="petType">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="bird">Bird</option>
-            <option value="rabbit">Rabbit</option>
-            <option value="guineaPig">Guinea Pig</option>
-            <option value="other">Other</option>
-        </select>
+                <label for="lostPetType">Species:</label>
+                <select id="lostPetType" name="petType" autocomplete="off">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="guineaPig">Guinea Pig</option>
+                    <option value="ferret">Ferret</option>
+                </select>
 
-        <label for="lastSeenLocation">Last Seen Location:</label>
-        <input type="text" id="lastSeenLocation" name="lastSeenLocation" required>
+                <label for="breed">Breed:</label>
+                <input type="text" id="breed" name="breed" required autocomplete="off">
 
-        <!-- Owner Information/Contact -->
-        <h3>Owner Information/Contact</h3>
-        <label for="ownerName">Owner Name:</label>
-        <input type="text" id="ownerName" name="ownerName" required>
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required autocomplete="off">
 
-        <label>Best Contact Method:</label>
-        <div>
-            <button type="button" onclick="showPhoneNumberInputLost()">Phone</button>
-            <button type="button" onclick="showEmailInputLost()">Email</button>
-            <button type="button" onclick="showAppLoginLost()">Use the App</button>
-        </div>
-        <div id="contactInputLost">
-            <label for="contactInfo">Contact Information:</label>
-            <input type="text" id="contactInfo" name="contactInfo" required>
-        </div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0" required autocomplete="off">
 
-        <button type="submit">Submit</button>
-    </form>
-</section>
+                <label for="lastSeenLocation">Last Seen Location:</label>
+                <input type="text" id="lastSeenLocation" name="lastSeenLocation" required autocomplete="off">
 
-<!-- Report Found Pet Section -->
-<section id="found">
-    <h2>Report Found Pet</h2>
-    <!-- Found Pet Reporting Form -->
-    <form action="submit_found_pet.php" method="post">
-        <!-- Pet Information -->
-        <h3>Pet Information</h3>
-        <label for="foundPetName">Found Pet Name:</label>
-        <input type="text" id="foundPetName" name="foundPetName" required>
+                <label for="contact-method" id="contact-method">Contact Method:</label><br>
+                <div class="radio-container">
+                    <label for="phone">Phone</label>
+                    <input type="radio" id="phone" name="contactMethod" value="phone" required autocomplete="off">
+                    
+                    <label for="email">Email</label>
+                    <input type="radio" id="email" name="contactMethod" value="email" autocomplete="off">
+                    
+                    <label for="app">App</label>
+                    <input type="radio" id="app" name="contactMethod" value="app" autocomplete="off">
+                </div>
 
-        <label for="foundPetType">Found Pet Type:</label>
-        <select id="foundPetType" name="foundPetType">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="bird">Bird</option>
-            <option value="rabbit">Rabbit</option>
-            <option value="guineaPig">Guinea Pig</option>
-            <option value="other">Other</option>
-        </select>
+                <label for="contactInfo">Contact Information:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required autocomplete="off">
 
-        <label for="foundLocation">Found Location:</label>
-        <input type="text" id="foundLocation" name="foundLocation" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
 
-        <!-- Owner Information/Contact -->
-        <h3>Owner Information/Contact</h3>
-        <label for="finderName">Finder Name:</label>
-        <input type="text" id="finderName" name="finderName" required>
+        <section id="found">
+            <h2>Report Found Pet</h2>
+            <form id="foundPetForm" action="submit_found_pet.php" method="post">
+                <label for="foundPetName">Found Pet Name:</label>
+                <input type="text" id="foundPetName" name="foundPetName" required autocomplete="name">
 
-        <label>Best Contact Method:</label>
-        <div>
-            <button type="button" onclick="showPhoneNumberInputFound()">Phone</button>
-            <button type="button" onclick="showEmailInputFound()">Email</button>
-            <button type="button" onclick="showAppLoginFound()">Use the App</button>
-        </div>
-        <div id="contactInputFound">
-            <label for="contactInfo">Contact Information:</label>
-            <input type="text" id="contactInfo" name="contactInfo" required>
-        </div>
+                <label for="foundPetType">Species:</label>
+                <select id="foundPetType" name="petType" autocomplete="off">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="guineaPig">Guinea Pig</option>
+                    <option value="ferret">Ferret</option>
+                </select>
 
-        <button type="submit">Submit</button>
-    </form>
-</section>
+                <label for="foundBreed">Breed:</label>
+                <select id="foundBreed" name="foundBreed" autocomplete="off">
+                    <!-- Breed options will be dynamically populated here -->
+                </select>
 
-        <!-- About Section -->
+                <label for="foundColor">Color:</label>
+                <input type="text" id="foundColor" name="foundColor" required autocomplete="off">
+
+                <label for="foundAge">Age:</label>
+                <input type="number" id="foundAge" name="foundAge" min="0" required autocomplete="off">
+
+                <label for="foundLocation">Found Location:</label>
+                <input type="text" id="foundLocation" name="foundLocation" required autocomplete="off">
+
+                <label for="contact-method" id="contact-method">Contact Method:</label><br>
+                <div class="radio-container">
+                    <label for="phone">Phone</label>
+                    <input type="radio" id="phone" name="contactMethod" value="phone" required autocomplete="off">
+                    
+                    <label for="email">Email</label>
+                    <input type="radio" id="email" name="contactMethod" value="email" autocomplete="off">
+                    
+                    <label for="app">App</label>
+                    <input type="radio" id="app" name="contactMethod" value="app" autocomplete="off">
+                </div>
+
+                <label for="foundContactInfo">Contact Information:</label>
+                <input type="text" id="foundContactInfo" name="foundContactInfo" required autocomplete="off">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
         <section id="about">
             <h2>About Tail Trail</h2>
-            <p>Tail Trail is a lost and found fet alert system helps reunite lost pets with their owners by providing a platform for reporting lost or found pets and receiving real-time alerts about pets in your area.</p>
+            <p>Tail Trail is a lost and found pet alert system that helps reunite lost pets with their owners by providing a platform for reporting lost or found pets and receiving real-time alerts about pets in your area.</p>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Us</h2>
             <p>If you have any questions or concerns, please contact us at <a href="mailto:info@tailtrail.com">info@tailtrail.com</a>.</p>
         </section>
     </main>
 
-    <!-- Footer Section -->
     <footer>
-        <p>&copy; Copyright ©2024 BEEA Solutions, Tail Trail® Please reference the Terms and Conditions of Use for specific information. Your use of this website constitutes acceptance of the Terms of Use, Supplemental Terms, Privacy Policy and Cookie Policy.</p>
+        <p>&copy; Copyright ©2024 BEEA Solutions, Tail Trail® Please reference the Terms and Conditions of Use for specific information. Your use of this website constitutes acceptance of the Terms of Use, Supplemental Terms, Privacy Policy, and Cookie Policy.</p>
     </footer>
 
-    <!-- JavaScript for Random Dog Image Gallery -->
-    <script src="tailtrail.js"></script>
+    <script src="script.js"></script>
+</body>
 
-</body> <!-- End of body section -->
-
-</html> <!-- End of HTML document -->
+</html>

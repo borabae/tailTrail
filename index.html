@@ -9,9 +9,40 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 
+<!-- Login Pop-up -->
+<div id="loginPopup" class="popup">
+    <h3>Login</h3>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+    <button onclick="closePopup('loginPopup')">Close</button>
+</div>
+
+<!-- Registration Pop-up -->
+<div id="registerPopup" class="popup">
+    <h3>Register</h3>
+    <form id="registerForm">
+        <label for="newUsername">Username:</label>
+        <input type="text" id="newUsername" name="newUsername" required>
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+        <button type="submit">Register</button>
+    </form>
+    <button onclick="closePopup('registerPopup')">Close</button>
+</div>
+
 <body>
     <header>
         <img src="tailTrailLogo.png" alt="Tail Trail logo">
+        <div class="login-section">
+            <a href="#login">Login</a> <!-- Replace #login with the link to your login page -->
+            <span> | </span> <!-- Separate login and registration links -->
+            <a href="#registration">Register</a> <!-- Replace #registration with the link to your registration page -->
+        </div>
     </header>
     
     <nav>
@@ -100,20 +131,20 @@
                 <label for="lostPetImage">Upload Image:</label>
                 <input type="file" id="lostPetImage" name="lostPetImage" accept="image/jpeg">
                 
-                <label for="contact-method" id="contact-method">Contact Method:</label><br>
-                <div class="radio-container">
+                <fieldset class="radio-container" id="contact-method">
+                    <legend>Contact Method:</legend>
                     <label for="phone1">Phone</label>
-                    <input type="radio" id="Phone1" name="contactMethod" value="phone" required autocomplete="off">
+                    <input type="radio" id="phone1" name="contactMethod" value="phone" required autocomplete="off">
                     
                     <label for="email1">Email</label>
                     <input type="radio" id="email1" name="contactMethod" value="email" autocomplete="off">
                     
                     <label for="app1">App</label>
                     <input type="radio" id="app1" name="contactMethod" value="app" autocomplete="off">
-                </div>
 
-                <label for="contactInfo">Contact Information:</label>
-                <input type="text" id="contactInfo" name="contactInfo" placeholder="Please enter your preferred contact details" required autocomplete="off">
+                    <label for="contactInfo">Contact Information:</label>
+                    <input type="text" id="contactInfo" name="contactInfo" placeholder="Please enter your preferred contact details" required autocomplete="off">
+                </fieldset>
 
                 <button type="submit">Submit</button>
             </form>
@@ -156,8 +187,8 @@
                 <label for="foundPetImage">Upload Image:</label>
                 <input type="file" id="foundPetImage" name="foundPetImage" accept="image/jpeg">
 
-                <label for="contact-method" id="contact-method">Contact Method:</label><br>
-                <div class="radio-container">
+                <fieldset class="radio-container" id="contact-method">
+                    <legend>Contact Method:</legend>
                     <label for="phone2">Phone</label>
                     <input type="radio" id="phone2" name="contactMethod" value="phone" required autocomplete="off">
                     
@@ -165,11 +196,13 @@
                     <input type="radio" id="email2" name="contactMethod" value="email" autocomplete="off">
                     
                     <label for="app2">App</label>
-                    <input type="radio" id="app2" name="contactMethod" value="app" autocomplete="off">
-                </div>
+                    <input type="radio" id="app2" name="contactMethod" value="app" autocomplete="off"> 
 
-                <label for="foundContactInfo">Contact Information:</label>
-                <input type="text" id="foundContactInfo" name="foundContactInfo" placeholder="Please enter your preferred contact details" required autocomplete="off">
+                    <br>
+
+                    <label for="contactInfo">Contact Information:</label>
+                    <input type="text" id="contactInfo" name="contactInfo" placeholder="Please enter your preferred contact details" required autocomplete="off">
+                </fieldset>
 
                 <button type="submit">Submit</button>
             </form>

@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    font-size: larger;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -10,19 +10,36 @@ header {
     background-color: #F4A905;
     color: white;
     text-align: center;
+    padding: 20px;
 }
 
 .logo {
-    width: 10px; /* Adjust width as needed */
-    height: 10px; /* Maintain aspect ratio */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 20px; /* Add margin to separate logo from heading */
+}
+
+.login-section {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: larger;
+}
+
+.login-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-section a:hover {
+    text-decoration: underline;
 }
 
 nav {
     background-color: #333;
     color: white;
-    padding: 40px;
-    font-size: larger;
+    padding: 20px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -63,6 +80,7 @@ h1 {
 
 h2 {
     color: #F4A905;
+    font-size: 24px;
 }
 
 form {
@@ -146,6 +164,10 @@ button:hover {
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 15px;
+}
+
+.radio-container fieldset {
+    margin-bottom: 40px; /* Add a gap of 20px below the fieldset */
 }
 
 /* Styles for the popup */

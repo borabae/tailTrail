@@ -1,131 +1,163 @@
 /* Global Styles */
-
 body {
-    font-family: Arial, sans-serif; /* Set font family for the entire page */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #F4A905; /* Set background color for header */
-    color: white; /* Set text color for header */
-    padding: 20px; /* Add padding to header */
-    text-align: center; /* Center-align text */
+    background-color: #F4A905;
+    color: white;
+    text-align: center;
+}
+
+.logo {
+    width: 10px; /* Adjust width as needed */
+    height: 10px; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add margin to separate logo from heading */
 }
 
 nav {
-    background-color: #333; /* Set background color for navigation */
-    color: white; /* Set text color for navigation */
-    padding: 10px; /* Add padding to navigation */
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    font-size: larger;
+    text-align: center;
 }
 
 nav ul {
-    list-style-type: none; /* Remove default list styling */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline; /* Display list items horizontally */
-    margin-right: 20px; /* Add right margin between list items */
+    display: inline;
+    margin-right: 20px;
 }
 
 nav ul li a {
-    color: white; /* Set text color for navigation links */
-    text-decoration: none; /* Remove underline from links */
+    color: white;
+    text-decoration: none;
 }
 
 main {
-    padding: 20px; /* Add padding to main content area */
+    padding: 20px;
 }
 
 section {
-    margin-bottom: 30px; /* Add bottom margin between sections */
+    margin-bottom: 30px;
 }
 
 footer {
-    background-color: #333; /* Set background color for footer */
-    color: white; /* Set text color for footer */
-    padding: 10px; /* Add padding to footer */
-    text-align: center; /* Center-align text */
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 
-/* Specific Styles */
-
 h1 {
-    margin: 0; /* Remove default margin for h1 */
+    margin: 0;
 }
 
 h2 {
-    color: #F4A905; /* Set text color for h2 */
+    color: #F4A905;
 }
 
 form {
-    background-color: #f2f2f2; /* Set background color for form */
-    padding: 20px; /* Add padding to form */
-    border-radius: 5px; /* Add border radius to form */
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 label {
-    display: block; /* Display labels as block elements */
-    margin-bottom: 10px; /* Add bottom margin between labels */
+    display: block;
+    margin-bottom: 10px;
 }
 
 input[type="text"],
-select {
-    width: 100%; /* Set input and select elements to 100% width */
-    padding: 10px; /* Add padding to input and select elements */
-    margin-bottom: 20px; /* Add bottom margin between input and select elements */
+select,
+button,
+input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 button {
-    background-color: #F4A905; /* Set background color for button */
-    color: white; /* Set text color for button */
-    padding: 10px 20px; /* Add padding to button */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Add border radius to button */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #F4A905;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #F4A905; /* Change background color on hover */
+    background-color: #FFC107;
 }
 
 #petGallery {
     text-align: center;
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Distribute items evenly */
 }
-.gallery-container {
-    width: 40%; /* Set the width of each gallery container */
-    display: inline-block; /* Display gallery containers side-by-side */
-    vertical-align: top; /* Align containers to the top */
-    margin-right: 30px; /* Add spacing between gallery containers */
-    border: #333;
-    border-radius: 10px;
-  }
-  
-  .pet-gallery {
-    display: flex; /* Use flexbox for the gallery */
-    flex-wrap: nowrap; /* Prevent images from wrapping to the next line */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 10px; /* Add spacing between images */
-  }
-  
-  .pet-gallery img {
-    max-width: 100px; /* Set maximum width for images */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Maintain aspect ratio without stretching */
-  }
 
-  .radio-container {
+.gallery-container {
+    width: 45%; /* Set a fixed width for the gallery container */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pet-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start; /* Center-align images horizontally */
+    gap: 10px;
+    margin-top: 10px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.pet-gallery img {
+    max-width: 100%;
+    max-height: 230px; /* Set a maximum height for the images */
+    object-fit: cover;
+    flex-grow: 0;
+}
+
+.radio-container {
     display: flex; /* Use flexbox to align items horizontally */
-  }
-  
-  .radio-container label {
-    margin-right: 15px; /* Adjust as needed to create space between each radio button */
-  }
-  
-  .radio-container input[type="radio"] {
-    margin-right: 5px; /* Adjust as needed to create space between radio button and label */
-  }
-  
-  
+    align-items: center; /* Align items vertically in the center */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    margin-bottom: 10px;
+}
+
+.radio-container label {
+    margin-right: 10px; /* Add space between label text and radio buttons */
+    margin-left: 10px;
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 5px; /* Adjust as needed */
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* Styles for the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

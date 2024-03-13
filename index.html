@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Tail Trail"/>
+    <title>Tail Trail</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="tailTrailLogo.png" alt="Tail Trail logo">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#lost">Report Lost Pet</a></li>
+            <li><a href="#found">Report Found Pet</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#petGallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Tail Trail</h2>
+            <p>This is where you can report lost or found pets and receive real-time alerts about pets in your area.</p>
+        </section>
+
+        <section id="petGallery">
+            <div class="gallery-container">
+                <h2>Lost Pets</h2>
+                <div class="pet-gallery" id="lost-pet-gallery">
+                    <img src="https://www.humanesociety.org/sites/default/files/styles/768x326/public/2020/04/guinea-pig-511233.jpg?h=10d202d3&itok=xygPb78l" alt="Lost Pet 1">
+                    <img src="https://www.brisbane.qld.gov.au/sites/default/files/images/2020-12/1200x630-keeping-a-cat.jpg" alt="Lost Pet 2">
+                    <img src="https://piscespets.com/cdn/shop/articles/e8dda4a92fc37646fe936863a82f2cb6.jpg?v=1623956703" alt="Lost Pet 3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/George_the_amazing_guinea_pig.jpg/640px-George_the_amazing_guinea_pig.jpg" alt="Lost Pet 4">
+                    <img src="https://www.treehugger.com/thmb/pjdyg-LFM8LMjFqQJ_F-ZknClGY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/things-humans-do-that-dogs-hate-4864319-26-a14e278719804f89a2772fe127676611.jpg" alt="Lost Pet 5">
+                    <img src="https://www.avma.org/sites/default/files/media/pet-selection-budgie-with-girl-sm.jpg" alt="Lost Pet 6">
+                    <img src="https://myrightbird.com/assets/uploads/mrb-cockatoo-on-arm-e1691150410966-900x887.jpg" alt="Lost Pet 7">
+                    <img src="https://diqmdwhttngxa.cloudfront.net/58432/2528/Leah_Sikka-45_3000.jpg" alt="Lost Pet 8">
+                    <img src="https://i.redd.it/22bvjvma4c111.jpg" alt="Lost Pet 9">
+                    <img src="https://live.staticflickr.com/8680/16582145236_e8bf5975a8_b.jpg" alt="Lost Pet 10">
+                </div>
+            </div>
+            
+            <div class="gallery-container">
+                <h2>Found Pets</h2>
+                <div class="pet-gallery" id="found-pet-gallery">
+                    <img src="https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg" alt="Found Pet 1">
+                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/BRmFti85g0XAOsDXkMriew/348s.jpg" alt="Found Pet 2">
+                    <img src="https://cdn.rescuegroups.org/6685/pictures/animals/16837/16837676/79189755.jpg" alt="Found Pet 3">
+                    <img src="https://wallpapers.com/images/hd/ferret-pink-paw-yj6eu1fw13b8llfj.jpg" alt="Found Pet 4">
+                    <img src="https://images.squarespace-cdn.com/content/v1/58b5ecd515d5db7e99645582/1595882789680-CHVWUWQIECRW81N3UZC4/_MG_4139.JPG" alt="Found Pet 5">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5c14460a2714e5462b1020d2/1606673849731-59H6ZSBFB9TZSWUXDDUF/LEXI-O.jpg" alt="Found Pet 6">
+                    <img src="https://i.dailymail.co.uk/1s/2023/04/21/14/70092619-0-image-a-14_1682084203291.jpg" alt="Found Pet 7">
+                    <img src="https://static4.depositphotos.com/1007058/316/i/450/depositphotos_3167621-stock-photo-dwarf-rabbit.jpg" alt="Found Pet 8">
+                    <img src="https://www.hachettebookgroup.com/wp-content/uploads/2023/02/SQUARE-Candid_3642612169.jpg" alt="Found Pet 9">
+                    <img src="https://www.shutterstock.com/image-photo/jack-russell-terrier-playing-brain-600nw-1932832319.jpg" alt="Found Pet 10">
+                </div>
+            </div>          
+        </section>
+
+        <section id="lost">
+            <h2>Report Lost Pet</h2>
+            <form id="lostPetForm" action="submit_lost_pet.php" method="post">
+                <label for="petName">Pet Name:</label>
+                <input type="text" id="petName" name="petName" placeholder="What is your pet's name?" required autocomplete="name">
+
+                <label for="lostPetType">Species:</label>
+                <select id="lostPetType" name="petType" placeholder="What is your pet?" required autocomplete="off">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="guineaPig">Guinea Pig</option>
+                    <option value="ferret">Ferret</option>
+                </select>
+
+                <label for="lostGender">Gender:</label>
+                <select id="lostGender" name="lostGender" placeholder="Is your pet male or female?" required>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="unknown">Unsure</option>
+                </select>
+
+                <label for="breed">Breed:</label>
+                <select id="breed" name="breed" placeholder="What's your pets' breed?" autocomplete="off"></select>
+
+                <label for="foundColor">Color:</label>
+                <input type="text" id="foundColor" name="foundColor" placeholder="What colour is your pet?" required autocomplete="off">
+
+                <label for="lostLocation">Last Known Location:</label>
+                <input type="text" id="lostLocation" name="lostLocation" placeholder="Where did you last see your pet?" required autocomplete="off">
+
+                <label for="lostPetImage">Upload Image:</label>
+                <input type="file" id="lostPetImage" name="lostPetImage" accept="image/jpeg">
+                
+                <label for="contact-method" id="contact-method">Contact Method:</label><br>
+                <div class="radio-container">
+                    <label for="phone1">Phone</label>
+                    <input type="radio" id="Phone1" name="contactMethod" value="phone" required autocomplete="off">
+                    
+                    <label for="email1">Email</label>
+                    <input type="radio" id="email1" name="contactMethod" value="email" autocomplete="off">
+                    
+                    <label for="app1">App</label>
+                    <input type="radio" id="app1" name="contactMethod" value="app" autocomplete="off">
+                </div>
+
+                <label for="contactInfo">Contact Information:</label>
+                <input type="text" id="contactInfo" name="contactInfo" placeholder="Please enter your preferred contact details" required autocomplete="off">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="found">
+            <h2>Report Found Pet</h2>
+            <form id="foundPetForm" action="submit_found_pet.php" method="post">
+                <label for="foundPetName">Found Pet:</label>
+                <input type="text" id="foundPetName" name="foundPetName" placeholder="Does this animal have a nametag? Enter name" autocomplete="name">
+
+                <label for="foundPetType">Species:</label>
+                <select id="foundPetType" name="petType" placeholder="What kind of animal did you find?" required autocomplete="off">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="guineaPig">Guinea Pig</option>
+                    <option value="ferret">Ferret</option>
+                </select>
+
+                <label for="foundGender">Gender:</label>
+                <select id="foundGender" name="foundGender" placeholder="Is the animal male or female?" required>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="unknown">Unsure</option>
+                </select>
+
+                <label for="breed">Breed:</label>
+                <select id="breed" name="breed" placeholder="Do you know the animal's breed?" autocomplete="off"></select>
+                
+                <input type="text" id="otherBreedInput" name="otherBreed" style="display: none;" placeholder="Enter other breed">
+
+                <label for="foundColor">Color:</label>
+                <input type="text" id="foundColor" name="foundColor" placeholder="What colour is the animal?" required autocomplete="off">
+
+                <label for="foundLocation">Found Location:</label>
+                <input type="text" id="foundLocation" name="foundLocation" placeholder="Where did you find the animal?" required autocomplete="off">
+                
+                <label for="foundPetImage">Upload Image:</label>
+                <input type="file" id="foundPetImage" name="foundPetImage" accept="image/jpeg">
+
+                <label for="contact-method" id="contact-method">Contact Method:</label><br>
+                <div class="radio-container">
+                    <label for="phone2">Phone</label>
+                    <input type="radio" id="phone2" name="contactMethod" value="phone" required autocomplete="off">
+                    
+                    <label for="email2">Email</label>
+                    <input type="radio" id="email2" name="contactMethod" value="email" autocomplete="off">
+                    
+                    <label for="app2">App</label>
+                    <input type="radio" id="app2" name="contactMethod" value="app" autocomplete="off">
+                </div>
+
+                <label for="foundContactInfo">Contact Information:</label>
+                <input type="text" id="foundContactInfo" name="foundContactInfo" placeholder="Please enter your preferred contact details" required autocomplete="off">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="about">
+            <h2>About Tail Trail</h2>
+            <p>Tail Trail is a lost and found pet alert system that helps reunite lost pets with their owners by providing a platform for reporting lost or found pets and receiving real-time alerts about pets in your area.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or concerns, please contact us at <a href="mailto:info@tailtrail.com">info@tailtrail.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright ©2024 BEEA Solutions, Tail Trail® Please reference the Terms and Conditions of Use for specific information. Your use of this website constitutes acceptance of the Terms of Use, Supplemental Terms, Privacy Policy, and Cookie Policy.</p>
+    </footer>
+
+    <!-- Popup container -->
+    <div id="popup" class="popup">
+        <h3>Form Submitted Successfully!</h3>
+        <p>Thank you for submitting the form.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

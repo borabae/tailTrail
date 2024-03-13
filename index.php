@@ -4,6 +4,23 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Table Display</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            text-align: left;
+        }
+        img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
     <meta name="description" content="Tail Trail"/>
     <title>Tail Trail</title>
     <link href="styles.css" rel="stylesheet">
@@ -206,6 +223,73 @@
 
                 <button type="submit">Submit</button>
             </form>
+
+            <h2>Database Table Data</h2>
+
+<?php
+// Database connection details
+$host = 'tail-trail-db.mysql.database.azure.com';
+$db = 'tailtrial';
+$user = 'ericliu';
+$pass = 'Lhy54321..';
+$ssl_ca = 'DigiCertGlobalRootCA.crt.pem';
+
+// Initialize connection
+$conn = mysqli_init();
+if (!$conn) {
+    die("mysqli_init failed");
+}
+
+mysqli_ssl_set($conn,NULL,NULL, $ssl_ca, NULL, NULL);
+
+if (!mysqli_real_connect($conn, $host, $user, $pass, $db, 3306, NULL, MYSQLI_CLIENT_SSL)) {
+    die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
+}
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize form data
+    $name = htmlspecialchars($_POST['name']);
+    $species = 'Dog'; // Since this is a static value for this form
+    $breed = htmlspecialchars($_POST['breed']);
+    $color = htmlspecialchars($_POST['color']);
+    $age = intval($_POST['age']);
+    $last_seen_location = htmlspecialchars($_POST['last_seen_location']);
+    $last_seen_time = htmlspecialchars($_POST['last_seen_time']);
+    $additional_info = htmlspecialchars($_POST['additional_info']);
+    $is_found = intval($_POST['is_found']);
+    $date_reported = htmlspecialchars($_POST['date_reported']);
+    $photo_url = htmlspecialchars($_POST['photo_url']);
+
+    $sql = "INSERT INTO pets (name, species, breed, color, age, last_seen_location, last_seen_time, additional_info, is_found, date_reported, photo_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssisssiss", $name, $species, $breed, $color, $age, $last_seen_location, $last_seen_time, $additional_info, $is_found, $date_reported, $photo_url);
+
+    if ($stmt->execute()) {
+        echo "<p>New record created successfully</p>";
+    } else {
+        echo "<p>Error: " . $stmt->error . "</p>";
+    }
+
+    $stmt->close();
+}
+
+// Query to fetch all pets
+$sql = "SELECT * FROM pets";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table><tr><th>Pet ID</th><th>User ID</th><th>Name</th><th>Species</th><th>Breed</th><th>Color</th><th>Age</th><th>Last Seen Location</th><th>Last Seen Time</th><th>Additional Info</th><th>Is Found</th><th>Date Reported</th><th>Photo</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row["pet_id"]."</td><td>".$row["user_id"]."</td><td>".$row["name"]."</td><td>".$row["species"]."</td><td>".$row["breed"]."</td><td>".$row["color"]."</td><td>".$row["age"]."</td><td>".$row["last_seen_location"]."</td><td>".$row["last_seen_time"]."</td><td>".$row["additional_info"]."</td><td>".($row["is_found"] ? 'Yes' : 'No')."</td><td>".$row["date_reported"]."</td><td><img src='".$row["photo_url"]."' alt='Pet Photo'></td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "<p>0 results</p>";
+}
+$conn->close();
+?>
         </section>
 
         <section id="about">

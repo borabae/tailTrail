@@ -96,8 +96,8 @@
                 <label for="breed">Breed:</label>
                 <select id="breed" name="breed" placeholder="What's your pets' breed?" autocomplete="off"></select>
 
-                <label for="foundColor">Color:</label>
-                <input type="text" id="foundColor" name="foundColor" placeholder="What colour is your pet?" required autocomplete="off">
+                <label for="lostColor">Color:</label>
+                <input type="text" id="lostColor" name="lostColor" placeholder="What colour is your pet?" required autocomplete="off">
 
                 <label for="lostLocation">Last Known Location:</label>
                 <input type="text" id="lostLocation" name="lostLocation" placeholder="Where did you last see your pet?" required autocomplete="off">
@@ -126,7 +126,7 @@
 
         <section id="found">
             <h2>Report Found Pet</h2>
-            <form id="foundPetForm" action="submit_found_pet.php" method="post">
+            <form id="foundPetForm" action="submit.php" method="post">
                 <label for="foundPetName">Found Pet:</label>
                 <input type="text" id="foundPetName" name="foundPetName" placeholder="Does this animal have a nametag? Enter name" autocomplete="name">
 
@@ -147,8 +147,8 @@
                     <option value="unknown">Unsure</option>
                 </select>
 
-                <label for="breed">Breed:</label>
-                <select id="breed" name="breed" placeholder="Do you know the animal's breed?" autocomplete="off"></select>
+                <label for="foundBreed">Breed:</label>
+                <select id="foundBreed" name="foundBreed" placeholder="Do you know the animal's breed?" autocomplete="off"></select>
                 
                 <input type="text" id="otherBreedInput" name="otherBreed" style="display: none;" placeholder="Enter other breed">
 
@@ -161,7 +161,7 @@
                 <label for="foundPetImage">Upload Image:</label>
                 <input type="file" id="foundPetImage" name="foundPetImage" accept="image/jpeg">
 
-                <fieldset class="radio-container" id="contact-method">
+                <fieldset class="radio-container" id="contact-method2">
                     <legend>Contact Method:</legend>
                     <label for="phone2">Phone</label>
                     <input type="radio" id="phone2" name="contactMethod" value="phone" required autocomplete="off">
@@ -174,124 +174,13 @@
 
                     <br>
 
-                    <label for="contactInfo">Contact Information:</label>
-                    <input type="text" id="contactInfo" name="contactInfo" placeholder="Please enter your preferred contact details" required autocomplete="off">
+                    <label for="contactInfo2">Contact Information:</label>
+                    <input type="text" id="contactInfo2" name="contactInfo"2 placeholder="Please enter your preferred contact details" required autocomplete="off">
                 </fieldset>
 
                 <button type="submit">Submit</button>
             </form>
 
-            <?php
-            // Database connection details
-            $host = 'tail-trail-db.mysql.database.azure.com';
-            $db = 'tailtrial';
-            $user = 'ericliu';
-            $pass = 'Lhy54321..';
-            $ssl_ca = 'DigiCertGlobalRootCA.crt.pem';
-            
-            // Initialize connection
-            $conn = mysqli_init();
-            if (!$conn) {
-                die("mysqli_init failed");
-            }
-            
-            mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
-            
-            if (!mysqli_real_connect($conn, $host, $user, $pass, $db, 3306, NULL, MYSQLI_CLIENT_SSL)) {
-                die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
-            }
-            
-            // Handle form submission
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Collect and sanitize form data
-                $name = htmlspecialchars($_POST['petName']);
-                $species = htmlspecialchars($_POST['lostPetType']);
-                $breed = htmlspecialchars($_POST['breed']);
-                $color = htmlspecialchars($_POST['color']); 
-                $age = intval($_POST['age']); 
-                $gender = htmlspecialchars($_POST['gender']); // Assuming you have a gender input field
-                $last_seen_location = htmlspecialchars($_POST['lostLocation']);
-                $is_found = 0; // Since this form is for lost pets, is_found will always be 0
-                $date_reported = date("Y-m-d H:i:s"); // Assuming you want to record the current date and time
-            
-                // Handle file upload
-                $target_dir = "uploads/";
-                $target_file = $target_dir . basename($_FILES["photo"]["name"]);
-                $uploadOk = 1;
-                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                
-                // Check if image file is a actual image or fake image
-                $check = getimagesize($_FILES["photo"]["tmp_name"]);
-                if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
-                    $uploadOk = 1;
-                } else {
-                    echo "File is not an image.";
-                    $uploadOk = 0;
-                }
-                
-                // Check if file already exists
-                if (file_exists($target_file)) {
-                    echo "Sorry, file already exists.";
-                    $uploadOk = 0;
-                }
-                
-                // Check file size
-                if ($_FILES["photo"]["size"] > 500000) {
-                    echo "Sorry, your file is too large.";
-                    $uploadOk = 0;
-                }
-                
-                // Allow certain file formats
-                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                && $imageFileType != "gif" ) {
-                    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-                    $uploadOk = 0;
-                }
-                
-                // Check if $uploadOk is set to 0 by an error
-                if ($uploadOk == 0) {
-                    echo "Sorry, your file was not uploaded.";
-                // if everything is ok, try to upload file
-                } else {
-                    if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
-                        echo "The file ". htmlspecialchars( basename( $_FILES["photo"]["name"])). " has been uploaded.";
-                        $photo_url = $target_file;
-                    } else {
-                        echo "Sorry, there was an error uploading your file.";
-                    }
-                }
-            
-                $sql = "INSERT INTO pets (name, species, breed, color, age, gender, last_seen_location, is_found, date_reported, photo_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ssssississ", $name, $species, $breed, $color, $age, $gender, $last_seen_location, $is_found, $date_reported, $photo_url);
-            
-                if ($stmt->execute()) {
-                    echo "<p>New record created successfully</p>";
-                } else {
-                    echo "<p>Error: " . $stmt->error . "</p>";
-                }
-            
-                $stmt->close();
-            }
-            
-            // Query to fetch all pets
-            $sql = "SELECT * FROM pets";
-            $result = $conn->query($sql);
-            
-            if ($result->num_rows > 0) {
-                echo "<table><tr><th>Pet ID</th><th>User ID</th><th>Name</th><th>Species</th><th>Breed</th><th>Color</th><th>Age</th><th>Gender</th><th>Last Seen Location</th><th>Is Found</th><th>Date Reported</th><th>Photo</th></tr>";
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>".$row["pet_id"]."</td><td>".$row["user_id"]."</td><td>".$row["name"]."</td><td>".$row["species"]."</td><td>".$row["breed"]."</td><td>".$row["color"]."</td><td>".$row["age"]."</td><td>".$row["gender"]."</td><td>".$row["last_seen_location"]."</td><td>".($row["is_found"] ? 'Yes' : 'No')."</td><td>".$row["date_reported"]."</td><td><img src='".$row["photo_url"]."' alt='Pet Photo'></td></tr>";
-                }
-                echo "</table>";
-            } else {
-                echo "<p>0 results</p>";
-            }
-            $conn->close();
-            ?>
-            
         </section>
 
         <section id="about">

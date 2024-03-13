@@ -1,4 +1,3 @@
-<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Process form data
     $petName = $_POST["petName"];
@@ -12,4 +11,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: thank-you.php");
     exit();
 }
-?>
+

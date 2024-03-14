@@ -1,25 +1,25 @@
 <?php
-// Database connection details
-$host = 'tail-trail-db.mysql.database.azure.com';
-$db = 'tailtrial';
-$user = 'ericliu';
-$pass = 'Lhy54321..';
-$ssl_ca = 'DigiCertGlobalRootCA.crt.pem';
-
-// Initialize connection
-$conn = mysqli_init();
-if (!$conn) {
-    die("mysqli_init failed");
-}
-
-mysqli_ssl_set($conn,NULL,NULL, $ssl_ca, NULL, NULL);
-
-if (!mysqli_real_connect($conn, $host, $user, $pass, $db, 3306, NULL, MYSQLI_CLIENT_SSL)) {
-    die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
-}
-
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Database connection details
+    $host = 'tail-trail-db.mysql.database.azure.com';
+    $db = 'tailtrial';
+    $user = 'ericliu';
+    $pass = 'Lhy54321..';
+    $ssl_ca = 'DigiCertGlobalRootCA.crt.pem';
+
+    // Initialize connection
+    $conn = mysqli_init();
+    if (!$conn) {
+        die("mysqli_init failed");
+    }
+
+    mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
+
+    if (!mysqli_real_connect($conn, $host, $user, $pass, $db, 3306, NULL, MYSQLI_CLIENT_SSL)) {
+        die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
+    }
+
     // Collect and sanitize form data
     $pet_name = htmlspecialchars($_POST['petName']);
     $pet_type = $_POST['petType']; // No need for sanitization as it's a dropdown
@@ -47,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     $stmt->close();
+    $conn->close(); // Close the database connection
 }
-
-$conn->close();
 ?>

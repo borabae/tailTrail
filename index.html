@@ -72,7 +72,7 @@
 
         <section id="lost">
             <h2>Report Lost Pet</h2>
-            <form id="lostPetForm" action="lostSubmit.php" method="post">
+            <form id="lostPetForm" method="post" action="lostSubmit.php">
                 <label for="petName">Pet Name:</label>
                 <input type="text" id="petName" name="petName" placeholder="What is your pet's name?" required autocomplete="name">
 
@@ -126,7 +126,7 @@
 
         <section id="found">
             <h2>Report Found Pet</h2>
-            <form id="foundPetForm" action="foundSubmit.php" method="post">
+            <form id="foundPetForm" method="post" action="foundSubmit.php">
                 <label for="foundPetName">Found Pet:</label>
                 <input type="text" id="foundPetName" name="foundPetName" placeholder="Does this animal have a nametag? Enter name" autocomplete="name">
 
@@ -197,14 +197,7 @@
     <footer>
         <p>&copy; Copyright ©2024 BEEA Solutions, Tail Trail® Please reference the Terms and Conditions of Use for specific information. Your use of this website constitutes acceptance of the Terms of Use, Supplemental Terms, Privacy Policy, and Cookie Policy.</p>
     </footer>
-
-    <!-- Popup container -->
-    <div id="popup" class="popup">
-        <h3>Form Submitted Successfully!</h3>
-        <p>Thank you for submitting the form.</p>
-        <button onclick="closePopup()">Close</button>
-    </div>
-
+    
     <script src="script.js"></script>
 
 </body>

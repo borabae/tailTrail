@@ -1,15 +1,3 @@
-CREATE TABLE lost_pets (
-    pet_name VARCHAR(255),
-    pet_type VARCHAR(100),
-    lost_gender varchar(50),
-    breed VARCHAR(255),
-    lost_color VARCHAR(100),
-    lost_location VARCHAR(255),
-    contact_method VARCHAR(255),
-    contact_info VARCHAR(255),
-    photo_url TEXT
-);
-
 <?php
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

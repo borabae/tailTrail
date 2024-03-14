@@ -126,7 +126,7 @@
 
         <section id="found">
             <h2>Report Found Pet</h2>
-            <form id="foundPetForm" action="submit.php" method="post">
+            <form id="foundPetForm" action="foundSubmit.php" method="post">
                 <label for="foundPetName">Found Pet:</label>
                 <input type="text" id="foundPetName" name="foundPetName" placeholder="Does this animal have a nametag? Enter name" autocomplete="name">
 
@@ -175,7 +175,7 @@
                     <br>
 
                     <label for="contactInfo2">Contact Information:</label>
-                    <input type="text" id="contactInfo2" name="contactInfo"2 placeholder="Please enter your preferred contact details" required autocomplete="off">
+                    <input type="text" id="contactInfo2" name="contactInfo2" placeholder="Please enter your preferred contact details" required autocomplete="off">
                 </fieldset>
 
                 <input type="submit"/>

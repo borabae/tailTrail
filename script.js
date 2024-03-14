@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Last Seen Location:", lastSeenLocation);
         console.log("Contact Information:", contactInfo);
 
-        // Display the popup
-        displayPopup();
+        // // Display the popup
+        // displayPopup();
     });
 
     // Show/hide other pet type input based on selection
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var foundPetName = document.getElementById("foundPetName").value;
         var foundPetType = document.getElementById("foundPetType").value;
         var foundLocation = document.getElementById("foundLocation").value;
-        var finderContactInfo = document.getElementById("foundContactInfo").value;
+        var finderContactInfo = document.getElementById("ContactInfo2").value;
 
         // Add logic to handle form data (e.g., submit via AJAX, etc.)
         console.log("Found Pet Name:", foundPetName);
@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Found Location:", foundLocation);
         console.log("Finder Contact Information:", finderContactInfo);
 
-        // Display the popup
-        displayPopup();
+        // // Display the popup
+        // displayPopup();
     });
 
     // Show/hide other found pet type input based on selection
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
         popup.style.display = "none";
     }
 
-    if (response.success) {
+    if (false) {
         alert("Thank you! Your form has been submitted successfully.");
     } else {
         alert("Error submitting form."); // Display error message if form submission failed

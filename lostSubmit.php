@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lost_location = htmlspecialchars($_POST['lostLocation']);
     $contact_method = $_POST['contactMethod']; // No need for sanitization as it's a dropdown
     $contact_info = htmlspecialchars($_POST['contactInfo']);
-    $image_url = $_POST['lostPetImageUrl']; // Retrieve the image URL from the form
+    $image_url = $_POST['lostPetImage']; // Retrieve the image URL from the form
 
     // SQL query to insert data into the database
     $sql = "INSERT INTO lost_pets (pet_name, pet_type, lost_gender, breed, lost_color, lost_location, contact_method, contact_info, image_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";

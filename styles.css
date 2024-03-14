@@ -147,6 +147,22 @@ button:hover {
     flex-grow: 0;
 }
 
+/* CSS for spacing URL box and contact method evenly */
+#lostPetForm, #foundPetForm {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#lostPetImage, #foundPetImage {
+    flex: 1 1 100%; /* Take up full width on new line */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+}
+
+#contact-method, #contact-method2 {
+    flex: 1 1 100%; /* Take up full width on new line */
+}
+
+
 .radio-container {
     display: flex; /* Use flexbox to align items horizontally */
     align-items: center; /* Align items vertically in the center */
@@ -170,16 +186,3 @@ button:hover {
     margin-bottom: 40px; /* Add a gap of 20px below the fieldset */
 }
 
-/* Styles for the popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}

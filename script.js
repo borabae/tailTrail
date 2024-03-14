@@ -99,4 +99,11 @@ document.addEventListener("DOMContentLoaded", function() {
         var popup = document.getElementById("popup");
         popup.style.display = "none";
     }
+
+    if (response.success) {
+        alert("Thank you! Your form has been submitted successfully.");
+    } else {
+        alert("Error submitting form."); // Display error message if form submission failed
+    }
+    
 });
